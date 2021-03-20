@@ -1,0 +1,198 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:CP C1
+U 1 1 600D58AD
+P 5600 1900
+F 0 "C1" H 5850 1950 50  0000 L CNN
+F 1 "1000uf" H 5800 1850 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P2.50mm" H 5638 1750 50  0001 C CNN
+F 3 "~" H 5600 1900 50  0001 C CNN
+	1    5600 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 6008495C
+P 5850 4250
+F 0 "#PWR0101" H 5850 4000 50  0001 C CNN
+F 1 "GND" H 5855 4077 50  0000 C CNN
+F 2 "" H 5850 4250 50  0001 C CNN
+F 3 "" H 5850 4250 50  0001 C CNN
+	1    5850 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 3750 5850 3750
+$Comp
+L Converter_ACDC:HLK-PM01 PS1
+U 1 1 60349D41
+P 2950 1850
+F 0 "PS1" H 2950 2175 50  0000 C CNN
+F 1 "HLK-PM01" H 2950 2084 50  0000 C CNN
+F 2 "Converter_ACDC:Converter_ACDC_HiLink_HLK-PMxx" H 2950 1550 50  0001 C CNN
+F 3 "http://www.hlktech.net/product_detail.php?ProId=54" H 3350 1500 50  0001 C CNN
+	1    2950 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J1
+U 1 1 6008A88C
+P 2050 1900
+F 0 "J1" H 2050 1700 50  0000 L CNN
+F 1 "AC IN" H 2050 1600 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 2050 1900 50  0001 C CNN
+F 3 "~" H 2050 1900 50  0001 C CNN
+	1    2050 1900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2550 1900 2550 1950
+Wire Wire Line
+	2550 1800 2550 1750
+Wire Wire Line
+	2250 1800 2550 1800
+Wire Wire Line
+	2250 1900 2550 1900
+$Comp
+L power:GND #PWR0102
+U 1 1 603604C0
+P 4450 2350
+F 0 "#PWR0102" H 4450 2100 50  0001 C CNN
+F 1 "GND" H 4455 2177 50  0000 C CNN
+F 2 "" H 4450 2350 50  0001 C CNN
+F 3 "" H 4450 2350 50  0001 C CNN
+	1    4450 2350
+	1    0    0    -1  
+$EndComp
+Text Label 6100 1750 0    50   ~ 0
+PWR_IN
+$Comp
+L ESP8266:ESP-01v090 U1
+U 1 1 60081E8C
+P 4300 3900
+F 0 "U1" H 4300 4415 50  0000 C CNN
+F 1 "ESP-01v090" H 4300 4324 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x04_P2.54mm_Vertical" H 4300 4323 50  0001 C CNN
+F 3 "http://l0l.org.uk/2014/12/esp8266-modules-hardware-guide-gotta-catch-em-all/" H 4300 3900 50  0001 C CNN
+	1    4300 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 1950 3350 2050
+Text Label 5250 3850 0    50   ~ 0
+NOTIFY
+$Comp
+L Device:C C3
+U 1 1 603902B0
+P 5000 1900
+F 0 "C3" H 5115 1946 50  0000 L CNN
+F 1 "100nf" H 5115 1855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 5038 1750 50  0001 C CNN
+F 3 "~" H 5000 1900 50  0001 C CNN
+	1    5000 1900
+	1    0    0    -1  
+$EndComp
+Text Label 2700 4050 2    50   ~ 0
+PWR_IN
+Wire Wire Line
+	5000 2050 5600 2050
+Wire Wire Line
+	5000 1750 5600 1750
+Connection ~ 5600 1750
+Wire Wire Line
+	5600 1750 6100 1750
+Wire Wire Line
+	5850 3750 5850 4250
+Wire Wire Line
+	2700 4050 3150 4050
+Text Label 5250 3950 0    50   ~ 0
+TRIGGER
+Wire Wire Line
+	3350 3850 3150 3850
+Wire Wire Line
+	3150 3850 3150 4050
+Connection ~ 3150 4050
+Wire Wire Line
+	3150 4050 3350 4050
+Text Label 7300 2250 2    50   ~ 0
+TRIGGER
+$Comp
+L power:GND #PWR0104
+U 1 1 600905C0
+P 7950 2250
+F 0 "#PWR0104" H 7950 2000 50  0001 C CNN
+F 1 "GND" H 7955 2077 50  0000 C CNN
+F 2 "" H 7950 2250 50  0001 C CNN
+F 3 "" H 7950 2250 50  0001 C CNN
+	1    7950 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push L1
+U 1 1 6008E751
+P 7750 2250
+F 0 "L1" H 7880 2346 50  0000 L CNN
+F 1 "SwitchSignal" H 7250 2500 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" V 7725 2350 50  0001 C CNN
+F 3 "~" V 7725 2350 50  0001 C CNN
+	1    7750 2250
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 4500 7000 4350
+Wire Wire Line
+	7000 3750 7000 3600
+$Comp
+L Device:LED D2
+U 1 1 601597AC
+P 7000 4200
+F 0 "D2" V 7039 4082 50  0000 R CNN
+F 1 "LED" V 6948 4082 50  0000 R CNN
+F 2 "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical" H 7000 4200 50  0001 C CNN
+F 3 "~" H 7000 4200 50  0001 C CNN
+	1    7000 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 6015BBD3
+P 7000 3900
+F 0 "R6" H 7070 3946 50  0000 L CNN
+F 1 "220" H 7070 3855 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 6930 3900 50  0001 C CNN
+F 3 "~" H 7000 3900 50  0001 C CNN
+	1    7000 3900
+	1    0    0    -1  
+$EndComp
+Text Label 7000 4500 0    50   ~ 0
+NOTIFY
+Text Label 7000 3600 0    50   ~ 0
+PWR_IN
+Wire Wire Line
+	7300 2250 7550 2250
+Wire Wire Line
+	3350 2050 4450 2050
+Connection ~ 5000 2050
+Wire Wire Line
+	3350 1750 5000 1750
+Connection ~ 5000 1750
+Wire Wire Line
+	4450 2350 4450 2050
+Connection ~ 4450 2050
+Wire Wire Line
+	4450 2050 5000 2050
+$EndSCHEMATC
